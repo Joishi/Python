@@ -1,5 +1,5 @@
 from unittest import TestCase
-from path import Point
+from tower_defense.path import Point
 
 
 class TestPoint(TestCase):

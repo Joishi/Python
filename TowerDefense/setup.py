@@ -1,5 +1,5 @@
-from Path.path import Path
-from Path.path import Point
+from tower_defense.path import Path
+from tower_defense.path import Point
 
 
 def main():
