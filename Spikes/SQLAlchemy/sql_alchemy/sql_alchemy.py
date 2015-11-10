@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
+from sqlite import sqlite_in_memory
 
-dbEngine = create_engine("postgres://devtbsp:devtbsp@localhost:5432")
-resultSet = dbEngine.execute("select * from sql_al.car_model")
+
+resultSet = sqlite_in_memory.dbEngine.execute("select * from car_model")
 for row in resultSet.fetchall():
     print(row)
