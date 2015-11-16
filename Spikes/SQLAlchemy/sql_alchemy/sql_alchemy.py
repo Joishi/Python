@@ -1,6 +1,6 @@
 from sqlite import sqlite_in_memory
 from orm_base import Base, CarMake, CarModel, CarOwner, Car
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, contains_eager
 
 Base.metadata.create_all(sqlite_in_memory.dbEngine)
 session = Session(bind=sqlite_in_memory.dbEngine)
@@ -18,22 +18,12 @@ joshua.cars = [joshuaCar]
 session.add_all([chevrolet, toyota, aveo, joshua, joshuaCar])
 session.commit()
 
-resultSet = session.query(CarMake)
-for row in resultSet.all():
-    print(row, row.car_models)
+resultSet = session.query(CarMake, CarModel, CarOwner, Car).\
+    join(CarModel, CarMake.car_make_id == CarModel.car_make_id).\
+    join(Car, CarModel.car_model_id == Car.car_model_id).\
+    join(CarOwner, Car.car_owner_id == CarOwner.car_owner_id).\
+    options(contains_eager(CarMake.car_models), contains_eager(CarModel.cars), contains_eager(CarOwner.cars))
 
-resultSet = session.query(CarModel)
-for row in resultSet.all():
-    print(row, row.cars)
-
-resultSet = session.query(CarOwner)
-for row in resultSet.all():
-    print(row, row.cars)
-
-resultSet = session.query(Car)
 for row in resultSet.all():
     print(row)
 
-#resultSet = sqlite_in_memory.dbEngine.execute("select * from car_make")
-#for row in resultSet.fetchall():
-#    print(row)
