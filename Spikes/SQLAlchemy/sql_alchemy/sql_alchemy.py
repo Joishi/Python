@@ -5,28 +5,30 @@ from sqlalchemy.orm import Session
 Base.metadata.create_all(sqlite_in_memory.dbEngine)
 session = Session(bind=sqlite_in_memory.dbEngine)
 
-chevrolet = CarMake(car_make_id=1, make_name="CHEVROLET")
-toyota = CarMake(car_make_id=2, make_name="TOYOTA")
+chevrolet = CarMake(make_name="CHEVROLET")
+toyota = CarMake(make_name="TOYOTA")
+aveo = CarModel(model_name="AVEO")
+joshua = CarOwner(first_name="Joshua", last_name="Boyd")
+joshuaCar = Car(vin="01234567890ABCDEF0123")
+chevrolet.car_models = [aveo]
+aveo.cars = [joshuaCar]
+joshua.cars = [joshuaCar]
 
-aveo = CarModel(car_model_id=1, car_make_id=1, model_name="AVEO")
-
-joshua = CarOwner(car_owner_id=1, first_name="Joshua", last_name="Boyd")
-
-joshuaCar = Car(car_id=1, car_model_id=1, car_owner_id=1, vin="01234567890ABCDEF0123")
 
 session.add_all([chevrolet, toyota, aveo, joshua, joshuaCar])
+session.commit()
 
 resultSet = session.query(CarMake)
 for row in resultSet.all():
-    print(row)
+    print(row, row.car_models)
 
 resultSet = session.query(CarModel)
 for row in resultSet.all():
-    print(row)
+    print(row, row.cars)
 
 resultSet = session.query(CarOwner)
 for row in resultSet.all():
-    print(row)
+    print(row, row.cars)
 
 resultSet = session.query(Car)
 for row in resultSet.all():
