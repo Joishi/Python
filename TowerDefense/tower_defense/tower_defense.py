@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 import tkinter
 from database import seed_data, orm
-from gui import gui
+from mvc import model, view
 
 def main():
     dbEngine = create_engine("sqlite://")
@@ -11,14 +11,18 @@ def main():
     session = Session(bind=dbEngine)
     seedData = seed_data.SeedData()
     seedData.createSeedData(session)
-    for gameStage in session.query(orm.GameStage).all():
-        print(gameStage)
-        for waveLevel in gameStage.waves:
-            print("  " + str(waveLevel))
-            for creep in waveLevel.wave.creeps:
-                print("    " + str(creep))
-    mainGui = gui.MainGUI(tkinter.Tk())
-    mainGui.run()
+    gameStages = session.query(orm.GameStage).all()
+#    for gameStage in gameStages:
+#        print(gameStage)
+#        for waveLevel in gameStage.waves:
+#            print("  " + str(waveLevel))
+#            for creep in waveLevel.wave.creeps:
+#                print("    " + str(creep))
+    mainModel =  model.MainModel()
+    mainView = view.MainView(tkinter.Tk())
+    mainView.model = mainModel
+    mainView.gameStages = gameStages
+    mainView.run()
 
 if __name__ == "__main__":
     main()
