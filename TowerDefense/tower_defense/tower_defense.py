@@ -5,6 +5,7 @@ from database import orm
 
 def main():
     dbEngine = create_engine("sqlite://")
+#    dbEngine = create_engine("postgres://devtbsp:devtbsp@localhost/devtbsp")
     orm.SQLAlchemyBase.metadata.create_all(dbEngine)
     session = Session(bind=dbEngine)
     seedData = seed_data.SeedData()

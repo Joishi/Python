@@ -60,7 +60,7 @@ class WaveCreep(SQLAlchemyBase):
     __tablename__ = "wave_creep"
     wave_id = Column(Integer, ForeignKey("wave.wave_id"))
     creep_id = Column(Integer, ForeignKey("creep.creep_id"))
-    position = Column(Integer, nullable=False)
+    position = Column(Integer, nullable=False, autoincrement=False)
     PrimaryKeyConstraint(wave_id, creep_id, position)
 
     creep = relationship("Creep")
@@ -99,7 +99,7 @@ class GameStageWave(SQLAlchemyBase):
 
     game_stage_id = Column(Integer, ForeignKey("game_stage.game_stage_id"))
     wave_id = Column(Integer, ForeignKey("wave.wave_id"))
-    level = Column(Integer, nullable=False)
+    level = Column(Integer, nullable=False, autoincrement=False)
     PrimaryKeyConstraint(game_stage_id, wave_id, level)
 
     wave = relationship("Wave")
