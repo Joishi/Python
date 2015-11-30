@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from database import seed_data
-from database import orm
+import tkinter
+from database import seed_data, orm
+from gui import gui
 
 def main():
     dbEngine = create_engine("sqlite://")
@@ -16,6 +17,8 @@ def main():
             print("  " + str(waveLevel))
             for creep in waveLevel.wave.creeps:
                 print("    " + str(creep))
+    mainGui = gui.MainGUI(tkinter.Tk())
+    mainGui.run()
 
 if __name__ == "__main__":
     main()
