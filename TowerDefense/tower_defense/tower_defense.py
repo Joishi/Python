@@ -11,6 +11,10 @@ def main():
     seedData.createSeedData(session)
     for row in session.query(orm.Path).all():
         print(row)
+    for row in session.query(orm.Point).all():
+        print(row)
+    for row in session.query(orm.PathPoint).all():
+        print(row)
 
 if __name__ == "__main__":
     main()
