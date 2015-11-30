@@ -92,3 +92,34 @@ class Creep(SQLAlchemyBase):
     def __repr__(self):
         return "<Creep(creep_id=%r, name=%r)>" %(self.creep_id, self.name)
 
+
+# Association table/pattern with SQLAlchemy
+class GameStageWave(SQLAlchemyBase):
+    __tablename__ = "game_stage_wave"
+
+    game_stage_id = Column(Integer, ForeignKey("game_stage.game_stage_id"))
+    wave_id = Column(Integer, ForeignKey("wave.wave_id"))
+    level = Column(Integer, nullable=False)
+    PrimaryKeyConstraint(game_stage_id, wave_id, level)
+
+    wave = relationship("Wave")
+
+    def __repr__(self):
+        return "<GameStageWave(Wave=%r, level=%r)>" %(self.wave, self.level)
+
+
+class GameStage(SQLAlchemyBase):
+    __tablename__ = "game_stage"
+
+    game_stage_id = Column(Integer, autoincrement=True, primary_key=True)
+
+    name = Column(String(60), nullable=False)
+    path_id = Column(Integer, ForeignKey(Path.path_id), nullable=False)
+
+    path = relationship("Path", backref="stages")
+    waves = relationship("GameStageWave", order_by="GameStageWave.level")
+
+    def __repr__(self):
+        return "<GameStage(game_stage_id=%r, name=%r, Path=%r)>" %(self.game_stage_id, self.name, self.path)
+
+

@@ -9,10 +9,12 @@ def main():
     session = Session(bind=dbEngine)
     seedData = seed_data.SeedData()
     seedData.createSeedData(session)
-    for row in session.query(orm.Path).all():
-        print(row, row.points)
-    for row in session.query(orm.Wave).all():
-        print(row, row.creeps)
+    for gameStage in session.query(orm.GameStage).all():
+        print(gameStage)
+        for waveLevel in gameStage.waves:
+            print("  " + str(waveLevel))
+            for creep in waveLevel.wave.creeps:
+                print("    " + str(creep))
 
 if __name__ == "__main__":
     main()

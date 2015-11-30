@@ -3,18 +3,11 @@ from database import orm
 class SeedData(object):
 
     def createSeedData(self, session):
-        self.createPaths(session)
-        self.createWaves(session)
-        session.commit()
-
-    def createPaths(self, session):
         point1 = orm.Point(x=0, y=0)
         point2 = orm.Point(x=200,  y=200)
         path1 = orm.Path(name="Test Path")
         path1.points = [point1, point2]
-        session.add(path1)
 
-    def createWaves(self, session):
         creep1 = orm.Creep(name="Test Creep1")
         creep2 = orm.Creep(name="Test Creep2")
         wave1 = orm.Wave(name="Test Wave1")
@@ -29,4 +22,12 @@ class SeedData(object):
         waveCreep8 = orm.WaveCreep(position=8); waveCreep8.creep = creep1
         waveCreep9 = orm.WaveCreep(position=9); waveCreep9.creep = creep2
         wave1.creeps = [waveCreep0, waveCreep1, waveCreep2, waveCreep3, waveCreep4, waveCreep5, waveCreep6, waveCreep7, waveCreep8, waveCreep9]
-        session.add(wave1)
+
+        gameStage1 = orm.GameStage(name="Test Stage1")
+        gameStage1.path = path1
+        gameStageWave1 = orm.GameStageWave(level=1); gameStageWave1.wave = wave1
+        gameStageWave2 = orm.GameStageWave(level=2); gameStageWave2.wave = wave1
+        gameStage1.waves = [gameStageWave1, gameStageWave2]
+        session.add_all([gameStage1])
+        session.commit()
+
