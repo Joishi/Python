@@ -9,19 +9,20 @@ class MainView(glib.Frame):
         self.pack_propagate(0)
         self.pack()
 
-        self.greeting_var = glib.StringVar()
-        self.greeting = glib.OptionMenu(self, self.greeting_var, "Hello", "Goodbye", "Heyo")
-        self.greeting_var.trace("w", self.updateBackground)
-        self.greeting_var.set("Hello")
+        self.gameStageListSelectedValue = glib.StringVar()
+        self.gameStageList = [""]
+        self.gameStageListSelectionBox = glib.OptionMenu(self, self.gameStageListSelectedValue, *self.gameStageList)
+        self.gameStageListSelectedValue.trace("w", self.updateBackground)
+        self.gameStageListSelectedValue.set("")
 
         self.recipient_var = glib.StringVar()
         self.recipient = glib.Entry(self, textvariable=self.recipient_var)
         self.recipient_var.set("World")
 
-        self.go_button = glib.Button(self, text="Go", command=self.print_out)
+        self.go_button = glib.Button(self, text="Go", command=self.startGame)
 
         self.go_button.pack(fill=glib.X, side=glib.BOTTOM)
-        self.greeting.pack(fill=glib.X, side=glib.TOP)
+        self.gameStageListSelectionBox.pack(fill=glib.X, side=glib.TOP)
         self.recipient.pack(fill=glib.X, side=glib.TOP)
 
         self._model = None
@@ -48,14 +49,20 @@ class MainView(glib.Frame):
     def shutdown(self):
         print("SHUTDOWN")
 
-    def updateBackground(self, name, index, mode):
+    def updateBackground(self, *args):
         print("UPDATE BACKGROUND")
+        gameStage = self.gameStageListSelectedValue.get()
 
     def updateGameStageSelection(self):
         print("UPDATE GAME STAGE SELECTION")
+        self.gameStageList.clear()
+        for gameStage in self._gameStages:
+            self.gameStageList.append(gameStage)
+        self.gameStageListSelectionBox.
+        self.gameStageListSelectedValue.set(self.gameStageList[0])
 
-    def print_out(self):
-        print("%s, %s!" %(self.greeting_var.get().title(), self.recipient_var.get()))
+    def startGame(self):
+        print("START GAME")
 
     def setModel(self, model):
         self._model = model

@@ -12,12 +12,6 @@ def main():
     seedData = seed_data.SeedData()
     seedData.createSeedData(session)
     gameStages = session.query(orm.GameStage).all()
-#    for gameStage in gameStages:
-#        print(gameStage)
-#        for waveLevel in gameStage.waves:
-#            print("  " + str(waveLevel))
-#            for creep in waveLevel.wave.creeps:
-#                print("    " + str(creep))
     mainModel =  model.MainModel()
     mainView = view.MainView(tkinter.Tk())
     mainView.model = mainModel
