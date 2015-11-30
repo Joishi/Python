@@ -63,6 +63,17 @@ class PathPoint(SQLAlchemyBase):
         return "<PathPoint(path_id=%r, point_id=%r)>" %(self.path_id, self.point_id)
 
 
+class Wave(SQLAlchemyBase):
+    __tablename__ = "wave"
+
+    wave_id = Column(Integer, autoincrement=True, primary_key=True)
+
+    name = Column(String(60), nullable=False)
+
+    def __repr__(self):
+        return "<Wave(wave_id=%r, name=%r>)" %(self.wave_id, self.name)
+
+
 class Creep(SQLAlchemyBase):
     __tablename__ = "creep"
 
@@ -72,4 +83,22 @@ class Creep(SQLAlchemyBase):
 
     def __repr__(self):
         return "<Creep(creep_id=%r, name=%r)>" %(self.creep_id, self.name)
+
+
+class WaveCreep(SQLAlchemyBase):
+    __tablename__ = "wave_creep"
+
+    wave_id = Column(Integer, ForeignKey(Wave.wave_id), nullable=False)
+    creep_id = Column(Integer, ForeignKey(Creep.creep_id), nullable=False)
+    position = Column(Integer, nullable=False)
+    __table_args__ = (
+        PrimaryKeyConstraint(wave_id, creep_id, position),
+    )
+
+    wave = relationship("Wave", backref="wave_creeps")
+    creep = relationship("Creep", backref="wave_creeps")
+
+    def __repr__(self):
+        return "<WaveCreep(wave_id=%r, creep_id=%r)>" %(self.wave_id, self.creep_id)
+
 
