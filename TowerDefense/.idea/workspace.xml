@@ -69,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.65068495">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -136,6 +136,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,7 +207,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -474,18 +474,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 11m 34s.xml">
-      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 12m 21s.xml">
-      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 12m 46s.xml">
-      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 13m 06s.xml">
-      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 13m 25s.xml">
       <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
     </history-entry>
@@ -502,6 +490,18 @@
       <configuration name="Unittest TestPath.test_orm" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_path - 2015.11.16 at 11h 16m 03s.xml">
+      <configuration name="Unittests in test_path" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_path - 2015.11.16 at 12h 53m 19s.xml">
+      <configuration name="Unittests in test_path" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_path - 2015.11.16 at 12h 54m 09s.xml">
+      <configuration name="Unittests in test_path" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_path - 2015.11.16 at 12h 56m 55s.xml">
+      <configuration name="Unittests in test_path" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_path - 2015.11.16 at 12h 57m 55s.xml">
       <configuration name="Unittests in test_path" configurationId="tests" />
     </history-entry>
   </component>
@@ -549,6 +549,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/database/orm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/database/seed_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/tower_defense.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -804,7 +850,7 @@
     <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65068495">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
