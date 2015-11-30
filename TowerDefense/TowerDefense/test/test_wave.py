@@ -1,5 +1,5 @@
 from unittest import TestCase
-from tower_defense.database import orm
+from database import orm
 
 
 class TestWave(TestCase):
