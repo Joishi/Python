@@ -33,21 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="path.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="orm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tower_defense/database/orm.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding>
                 <element signature="e#0#80#0" expanded="true" />
               </folding>
@@ -65,23 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tower_defense.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tower_defense.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tower_defense/tower_defense.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65068495">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_path.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_path.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.65068495">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -109,11 +97,11 @@
         <option value="$PROJECT_DIR$/Path/test_point.py" />
         <option value="$PROJECT_DIR$/towerdefense.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
         <option value="$PROJECT_DIR$/tower_defense/database/__init__.py" />
         <option value="$PROJECT_DIR$/tower_defense/tower_defense.py" />
         <option value="$PROJECT_DIR$/tower_defense/database/seed_data.py" />
         <option value="$PROJECT_DIR$/tower_defense/database/orm.py" />
+        <option value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
       </list>
     </option>
   </component>
@@ -148,8 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,6 +206,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,51 +215,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.tower_defense">
-    <configuration default="false" name="Unittests in test_point" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Path" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TowerDefense" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Path/test_point.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestPoint.test_hypotenuse" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tower_defense/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TowerDefense" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
-      <option name="CLASS_NAME" value="TestPoint" />
-      <option name="METHOD_NAME" value="test_hypotenuse" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in test_path">
     <configuration default="false" name="Unittests in test_path" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -294,23 +238,6 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="seed_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tower_defense/database" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TowerDefense" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/database/seed_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="tower_defense" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,6 +253,72 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/tower_defense.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestPoint.test_distance" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tower_defense/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TowerDefense" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
+      <option name="CLASS_NAME" value="TestPoint" />
+      <option name="METHOD_NAME" value="test_distance" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestPath.test_horizontal_distance" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tower_defense/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TowerDefense" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
+      <option name="CLASS_NAME" value="TestPath" />
+      <option name="METHOD_NAME" value="test_horizontal_distance" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestPath.test_orm" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tower_defense/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TowerDefense" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tower_defense/test/test_path.py" />
+      <option name="CLASS_NAME" value="TestPath" />
+      <option name="METHOD_NAME" value="test_orm" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -451,19 +444,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_point" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestPoint.test_hypotenuse" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_path" />
-      <item index="3" class="java.lang.String" itemvalue="Python.seed_data" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tower_defense" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_path" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tower_defense" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestPoint.test_distance" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestPath.test_horizontal_distance" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestPath.test_orm" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tower_defense" />
-        <item index="1" class="java.lang.String" itemvalue="Python.seed_data" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_path" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestPoint.test_hypotenuse" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_point" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_path" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestPath.test_orm" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestPath.test_horizontal_distance" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestPoint.test_distance" />
+        <item index="4" class="java.lang.String" itemvalue="Python.tower_defense" />
       </list>
     </recent_temporary>
   </component>
@@ -481,26 +474,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestPoint_test_hypotenuse - 2015.11.06 at 13h 08m 51s.xml">
-      <configuration name="Unittest TestPoint.test_hypotenuse" configurationId="tests" />
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 11m 34s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_path - 2015.11.06 at 13h 09m 14s.xml">
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 12m 21s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 12m 46s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 13m 06s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 13m 25s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 13m 55s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 14m 27s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_horizontal_distance - 2015.11.16 at 11h 14m 47s.xml">
+      <configuration name="Unittest TestPath.test_horizontal_distance" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestPath_test_orm - 2015.11.16 at 11h 16m 00s.xml">
+      <configuration name="Unittest TestPath.test_orm" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_path - 2015.11.16 at 11h 16m 03s.xml">
       <configuration name="Unittests in test_path" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_point - 2015.11.06 at 09h 24m 04s.xml">
-      <configuration name="Unittests in test_point" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_point - 2015.11.06 at 09h 30m 40s.xml">
-      <configuration name="Unittests in test_point" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_point - 2015.11.06 at 09h 31m 17s.xml">
-      <configuration name="Unittests in test_point" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_point - 2015.11.06 at 10h 17m 35s.xml">
-      <configuration name="Unittests in test_point" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_point - 2015.11.06 at 12h 47m 37s.xml">
-      <configuration name="Unittests in test_point" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -557,11 +559,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
+    <entry file="file://$PROJECT_DIR$/tower_defense/database/orm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/database/seed_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/tower_defense.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -587,9 +627,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -610,14 +648,6 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,9 +673,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -666,14 +694,6 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,14 +731,6 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tower_defense/database/seed_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -779,32 +783,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
+    <entry file="file://$PROJECT_DIR$/tower_defense/tower_defense.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+          <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tower_defense/database/orm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tower_defense/tower_defense.py">
+    <entry file="file://$PROJECT_DIR$/tower_defense/test/test_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65068495">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
