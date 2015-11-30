@@ -1,4 +1,4 @@
-
+﻿
 import sys
 import OpenGL.GL as gl
 import OpenGL.GLU as glu
@@ -53,6 +53,7 @@ class MainView(object):
         gl.glPopMatrix()
         glut.glutSwapBuffers()
         self.sphere.rotateColor()
+        self.sphere.rotateCenter()
         return
 
     def repaint(self):
@@ -68,6 +69,9 @@ class Sphere(object):
         self.redGrow = True
         self.greenGrow = True
         self.blueGrow = True
+        self.xGrow = True
+        self.yGrow = True
+        self.zGrow = True
 
     def getCenter(self):
         return self._center
@@ -90,6 +94,38 @@ class Sphere(object):
     center = property(getCenter, setCenter, None, "")
     radius = property(getRadius, setRadius, None, "")
     color = property(getColor, setColor, None, "")
+
+    def rotateCenter(self):
+        x = self._center.x
+        y = self._center.y
+        z = self._center.z
+        if x >= 10:
+            self.xGrow = False
+        if x <= -10:
+            self.xGrow = True
+        if y >= 10:
+            self.yGrow = False
+        if y <= -10:
+            self.yGrow = True
+        if z >= 10:
+            self.zGrow = False
+        if z <= -10:
+            self.zGrow = True
+        if self.xGrow:
+            x = x + .1
+        else:
+            x = x - .1
+        if self.yGrow:
+            y = y + .05
+        else:
+            y = y - .05
+        if self.zGrow:
+            z = z + .025
+        else:
+            z = z - .025
+        self._center.x = x
+        self._center.y = y
+        self._center.z = z
 
     def rotateColor(self):
         red = self._color.r
