@@ -10,11 +10,9 @@ def main():
     seedData = seed_data.SeedData()
     seedData.createSeedData(session)
     for row in session.query(orm.Path).all():
-        print(row)
-    for row in session.query(orm.Point).all():
-        print(row)
-    for row in session.query(orm.PathPoint).all():
-        print(row)
+        print(row, row.points)
+    for row in session.query(orm.Wave).all():
+        print(row, row.creeps)
 
 if __name__ == "__main__":
     main()
