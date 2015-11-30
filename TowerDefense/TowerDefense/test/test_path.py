@@ -1,5 +1,9 @@
-from unittest import TestCase
+﻿from unittest import TestCase
 from database import orm
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 class TestPath(TestCase):
