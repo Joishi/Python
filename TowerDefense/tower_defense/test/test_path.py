@@ -4,19 +4,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, contains_eager
 
 
-class TestPoint(TestCase):
-
-    def test_orm(self):
-        pointToTest = orm.Point(x=2, y=4)
-        self.assertEqual(pointToTest.x, 2, "X should be at 2")
-        self.assertEqual(pointToTest.y, 4, "Y should be at 4")
-
-    def test_distance(self):
-        pointToTest = orm.Point(x=2, y=4)
-        otherPointToTest = orm.Point(x=5, y=8)
-        self.assertEqual(pointToTest.distance(otherPointToTest), 5, "Distance Between should be 5")
-
-
 class TestPath(TestCase):
 
     def test_orm(self):

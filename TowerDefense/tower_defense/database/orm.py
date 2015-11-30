@@ -63,3 +63,13 @@ class PathPoint(SQLAlchemyBase):
         return "<PathPoint(path_id=%r, point_id=%r)>" %(self.path_id, self.point_id)
 
 
+class Creep(SQLAlchemyBase):
+    __tablename__ = "creep"
+
+    creep_id = Column(Integer, autoincrement=True, primary_key=True)
+
+    name = Column(String(60), nullable=False)
+
+    def __repr__(self):
+        return "<Creep(creep_id=%r, name=%r)>" %(self.creep_id, self.name)
+
