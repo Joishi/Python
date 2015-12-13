@@ -21,12 +21,32 @@ class MainView(ModelListener):
     def __init__(self):
         ModelListener.__init__(self)
         self._model = None
+        self._eyePosition = None
+        self._watchingPosition = None
+        self._upVector = None
 
         sphereCenter = Point3D(0, 0, 0)
         sphereColor = Color(255, 127, 0, 255)
         self.sphere = Sphere(sphereCenter, 2, sphereColor)
 
     def show(self):
+        self.initOpenGLMatrix()
+        glut.glutMainLoop()
+
+    def setModel(self, model):
+        if self._model is not None:
+            self._model.removeModelListener(self)
+        self._model = model
+        self._model.addModelListener(self)
+
+    model = property(None, setModel, None, "The model used for this view")
+
+    def gameStagesChanged(self, model):
+        self.updateGameStages(model.gameStages)
+        # this is only a temporary solution until UI element to select a game stage is done..
+        model.activeGameStage = model.gameStages[0]
+
+    def initOpenGLMatrix(self):
         # FROM http://code.activestate.com/recipes/325391-open-a-glut-window-and-draw-a-sphere-using-pythono/
         glut.glutInit(sys.argv)
         glut.glutInitDisplayMode(glut.GLUT_RGBA | glut.GLUT_DOUBLE | glut.GLUT_DEPTH)
@@ -50,34 +70,29 @@ class MainView(ModelListener):
         gl.glMatrixMode(gl.GL_PROJECTION)
         glu.gluPerspective(40., 1., 1., 40.)
         gl.glMatrixMode(gl.GL_MODELVIEW)
-        eyePosition = Point3D(0, 0, 10)
-        watchingPosition = Point3D(0, 0, 0)
-        upVector = Point3D(0, 1, 0)
-        glu.gluLookAt(eyePosition.x, eyePosition.y, eyePosition.z, watchingPosition.x, watchingPosition.y, watchingPosition.z, upVector.x, upVector.y, upVector.z)
+        self._eyePosition = Point3D(0, 0, 10)
+        self._watchingPosition = Point3D(0, 0, 0)
+        self._upVector = Point3D(0, 1, 0)
+        glu.gluLookAt(self._eyePosition.x, self._eyePosition.y, self._eyePosition.z,
+                      self._watchingPosition.x, self._watchingPosition.y, self._watchingPosition.z,
+                      self._upVector.x, self._upVector.y, self._upVector.z)
         gl.glPushMatrix()
-        glut.glutMainLoop()
-
-    def setModel(self, model):
-        if self._model is not None:
-            self._model.removeModelListener(self)
-        self._model = model
-        self._model.addModelListener(self)
-
-    model = property(None, setModel, None, "The model used for this view")
-
-    def gameStagesChanged(self, model):
-        self.updateGameStages(model.gameStages)
 
     def paint(self):
-        gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT)
+        if self._model is not None:
+            if self._model.activeGameStage is not None:
+                path = self._model.activeGameStage.path
+                for point in path.points:
+                    print(point)
+        gl.glPopMatrix()
         gl.glPushMatrix()
+        gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT)
         sphereCenter = self.sphere.center
         sphereRadius = self.sphere.radius
         sphereColor = self.sphere.color
         gl.glTranslate(sphereCenter.x, sphereCenter.y, sphereCenter.z)
         gl.glMaterialfv(gl.GL_FRONT, gl.GL_DIFFUSE, [sphereColor.getRedAsPercent(), sphereColor.getGreenAsPercent(), sphereColor.getBlueAsPercent(), sphereColor.getAlphaAsPercent()])
         glut.glutSolidSphere(sphereRadius, 50, 50)
-        gl.glPopMatrix()
         glut.glutSwapBuffers()
         self.sphere.rotateColor()
         self.sphere.rotateCenter()

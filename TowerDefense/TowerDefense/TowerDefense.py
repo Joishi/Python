@@ -12,11 +12,11 @@ def main():
     seedData = seed_data.SeedData()
     seedData.createSeedData(session)
     gameStages = session.query(orm.GameStage).all()
-    mainModel =  model.MainModel()
-    mainModel.gameStages = gameStages
     mainView = view.MainView()
     uiThread = threading.Thread(target=mainView.show)
     uiThread.start()
+    mainModel =  model.MainModel()
+    mainModel.gameStages = gameStages
     mainView.model = mainModel
     return
 
