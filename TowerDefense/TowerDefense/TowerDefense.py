@@ -1,4 +1,5 @@
-﻿from sqlalchemy import create_engine
+﻿import threading
+from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from database import seed_data, orm
 from mvc import model, view
@@ -14,8 +15,9 @@ def main():
     mainModel =  model.MainModel()
     mainModel.gameStages = gameStages
     mainView = view.MainView()
+    uiThread = threading.Thread(target=mainView.show)
+    uiThread.start()
     mainView.model = mainModel
-    mainView.show()
     return
 
 

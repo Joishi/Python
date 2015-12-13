@@ -1,5 +1,4 @@
-﻿
-import sys
+﻿import sys
 import OpenGL.GL as gl
 import OpenGL.GLU as glu
 import OpenGL.GLUT as glut
