@@ -35,6 +35,9 @@
     <Compile Include="mvc\model.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mvc\shapes.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mvc\view.py">
       <SubType>Code</SubType>
     </Compile>
