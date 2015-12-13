@@ -3,9 +3,7 @@
 class ModelSubject(object):
     
     def __init__(self):
-        logging.debug("Initializing ModelSubject for " + str(self))
         self._listeners = []
-        logging.debug("Done initializing ModelSubject for " + str(self))
         return
 
     def addModelListener(self, modelListener):
@@ -22,17 +20,18 @@ class ModelSubject(object):
 
 class MainModel(ModelSubject):
 
-    def __init__(self):
-        logging.debug("Initializing MainModel for " + str(self))
+    def __init__(self, name):
+        self._name = name
+        logging.debug("Initializing %r" %(self))
         ModelSubject.__init__(self)
         self._gameStages = None
         self._activeGameStage = None
         self._towers = []
-        logging.debug("Done initializing MainModel for " + str(self))
+        logging.debug("Done initializing %r" %(self))
         return
 
     def __repr__(self):
-        return "<MainModel>"
+        return "<MainModel %r>" %(getattr(self, '_name', None))
     
     def getGameStages(self):
         return self._gameStages

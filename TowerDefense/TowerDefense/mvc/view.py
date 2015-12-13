@@ -8,8 +8,6 @@ class ModelListener(object):
     '''To properly implement this class, you will need to add the following functions to your class:
     gameStagesChanged(self, model)'''
     def __init__(self):
-        logging.debug("Initializing ModelListener for " + str(self))
-        logging.debug("Done initializing ModelListener for " + str(self))
         return
 
     def modelChanged(self, model):
@@ -21,44 +19,47 @@ class ModelListener(object):
 
 class MainView(ModelListener):
 
-    def __init__(self):
-        logging.debug("Initializing MainView for " + str(self))
+    def __init__(self, name):
+        self._name = name
+        logging.debug("Initializing %r" %(self))
         ModelListener.__init__(self)
         self._model = None
         self._eyePosition = None
         self._watchingPosition = None
         self._upVector = None
         self._lastTime = None
-
         self._spheres = []
+        logging.debug("%r variables declared" %(self))
 
-        sphereCenter = Point3D()
+        sphereCenter = Point3D("Sphere 1 Center")
         sphereRadius = 20
-        sphereColor = Color(255, 127, 0, 255)
-        sphere = Sphere()
+        sphereColor = Color("Sphere 1 Color", 255, 127, 0, 255)
+        sphere = Sphere("Sphere 1")
         sphere.center = sphereCenter
         sphere.radius = sphereRadius
         sphere.color = sphereColor
-        sphere.addDestination(Point3D().translate(50, 50, 50))
-        sphere.addDestination(Point3D().translate(-50, -50, -50))
-        sphere.addDestination(Point3D())
+        sphere.addDestination(Point3D("Sphere 1 Destination 1").translate(50, 50, 50))
+        sphere.addDestination(Point3D("Sphere 1 Destination 2").translate(-50, -50, -50))
+        sphere.addDestination(Point3D("Sphere 1 Destination 3"))
         self._spheres.append(sphere)
-        sphereCenter = Point3D().translate(50, -20, -50)
+        logging.debug("First Sphere added")
+        sphereCenter = Point3D("Sphere 2 Center").translate(50, -20, -50)
         sphereRadius = 10
-        sphereColor = Color(127, 0, 255, 255)
-        sphere = Sphere()
+        sphereColor = Color("Sphere 2 Color", 127, 0, 255, 255)
+        sphere = Sphere("Sphere 2")
         sphere.center = sphereCenter
         sphere.radius = sphereRadius
         sphere.color = sphereColor
-        sphere.addDestination(Point3D().translate(-50, 50, 50))
-        sphere.addDestination(Point3D().translate(-50, 50, 50))
-        sphere.addDestination(Point3D().translate(10, 10, 10))
+        sphere.addDestination(Point3D("Sphere 2 Destination 1").translate(-50, 50, 50))
+        sphere.addDestination(Point3D("Sphere 2 Destination 2").translate(50, 50, -50))
+        sphere.addDestination(Point3D("Sphere 2 Destination 3").translate(10, 10, 10))
         self._spheres.append(sphere)
-        logging.debug("Done initializing MainView for " + str(self))
+        logging.debug("Second Sphere added")
+        logging.debug("Done initializing %r" %(self))
         return
 
     def __repr__(self):
-        return "<MainView openGL display>"
+        return "<MainView %r>" %(getattr(self, '_name', None))
 
     def show(self):
         self.initOpenGLMatrix()
@@ -104,9 +105,9 @@ class MainView(ModelListener):
         gl.glMatrixMode(gl.GL_PROJECTION)
         glu.gluPerspective(30., 1., 1., 1000.)
         gl.glMatrixMode(gl.GL_MODELVIEW)
-        self._eyePosition = Point3D(0, 0, 400)
-        self._watchingPosition = Point3D(0, 0, 0)
-        self._upVector = Point3D(0, 1, 0)
+        self._eyePosition = Point3D("Camera Eye Location").translate(0, 0, 400)
+        self._watchingPosition = Point3D("Camera Watching Position")
+        self._upVector = Point3D("Camera Up Vector").translate(0, 1, 0)
         glu.gluLookAt(self._eyePosition.x, self._eyePosition.y, self._eyePosition.z,
                       self._watchingPosition.x, self._watchingPosition.y, self._watchingPosition.z,
                       self._upVector.x, self._upVector.y, self._upVector.z)
