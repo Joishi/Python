@@ -27,13 +27,24 @@ class MainView(ModelListener):
         self._upVector = None
         self._lastTime = None
 
+        self._spheres = []
+
         sphereCenter = Point3D(0, 0, 0)
         sphereRadius = 20
         sphereColor = Color(255, 127, 0, 255)
-        self.sphere = Sphere(sphereCenter, sphereRadius, sphereColor)
-        self.sphere.addDestination(Point3D(50, 50, 50))
-        self.sphere.addDestination(Point3D(-50, -50, -50))
-        self.sphere.addDestination(Point3D(0, 0, 0))
+        sphere = Sphere(sphereCenter, sphereRadius, sphereColor)
+        sphere.addDestination(Point3D(50, 50, 50))
+        sphere.addDestination(Point3D(-50, -50, -50))
+        sphere.addDestination(Point3D(0, 0, 0))
+        self._spheres.append(sphere)
+        sphereCenter = Point3D(50, -20, -50)
+        sphereRadius = 10
+        sphereColor = Color(127, 0, 255, 255)
+        sphere = Sphere(sphereCenter, sphereRadius, sphereColor)
+        sphere.addDestination(Point3D(-50, 50, 50))
+        sphere.addDestination(Point3D(-50, 50, 50))
+        sphere.addDestination(Point3D(10, 10, 10))
+        self._spheres.append(sphere)
 
     def show(self):
         self.initOpenGLMatrix()
@@ -95,21 +106,24 @@ class MainView(ModelListener):
                 path = self._model.activeGameStage.path
 #                for point in path.points:
 #                    print(point)
-        gl.glPopMatrix()
-        gl.glPushMatrix()
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT)
-#        sphereCenter = self.sphere.center
-        sphereCenter = self.sphere.currentLocation
-        sphereRadius = self.sphere.radius
-        sphereColor = self.sphere.color
-        gl.glTranslate(sphereCenter.x, sphereCenter.y, sphereCenter.z)
-        gl.glMaterialfv(gl.GL_FRONT, gl.GL_DIFFUSE, [sphereColor.getRedAsPercent(), sphereColor.getGreenAsPercent(), sphereColor.getBlueAsPercent(), sphereColor.getAlphaAsPercent()])
-        glut.glutSolidSphere(sphereRadius, 15, 15)
+        self._drawSpheres(elapsedTime)
         glut.glutSwapBuffers()
-        self.sphere.rotateColor()
-        self.sphere.move(elapsedTime)
-#        self.sphere.rotateCenter()
         return
+
+    def _drawSpheres(self, elapsedTime):
+        for sphere in self._spheres:
+            gl.glPopMatrix()
+            gl.glPushMatrix()
+            sphereCenter = sphere.currentLocation
+            sphereRadius = sphere.radius
+            sphereColor = sphere.color
+            gl.glTranslate(sphereCenter.x, sphereCenter.y, sphereCenter.z)
+            gl.glMaterialfv(gl.GL_FRONT, gl.GL_DIFFUSE, [sphereColor.getRedAsPercent(), sphereColor.getGreenAsPercent(), sphereColor.getBlueAsPercent(), sphereColor.getAlphaAsPercent()])
+            glut.glutSolidSphere(sphereRadius, 15, 15)
+            sphere.move(elapsedTime)
+        return
+
 
     def repaint(self):
         glut.glutPostRedisplay()

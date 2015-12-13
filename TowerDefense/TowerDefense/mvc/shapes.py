@@ -1,4 +1,4 @@
-# This file contains shapes to draw with openGL
+﻿# This file contains shapes to draw with openGL
 
 from collections import deque
 import math
@@ -136,69 +136,6 @@ class Sphere(Movable):
     radius = property(getRadius, setRadius, None, "")
     color = property(getColor, setColor, None, "")
 
-    def rotateCenter(self, elapsedTime):
-        x = self._center.x
-        y = self._center.y
-        z = self._center.z
-        if x >= 10:
-            self.xGrow = False
-        if x <= -10:
-            self.xGrow = True
-        if y >= 10:
-            self.yGrow = False
-        if y <= -10:
-            self.yGrow = True
-        if z >= 10:
-            self.zGrow = False
-        if z <= -10:
-            self.zGrow = True
-        if self.xGrow:
-            x = x + .1
-        else:
-            x = x - .1
-        if self.yGrow:
-            y = y + .05
-        else:
-            y = y - .05
-        if self.zGrow:
-            z = z + .025
-        else:
-            z = z - .025
-        self._center.x = x
-        self._center.y = y
-        self._center.z = z
-
-    def rotateColor(self):
-        red = self._color.r
-        green = self._color.g
-        blue = self._color.b
-        if red >= 255:
-            self.redGrow = False
-        if red <= 0:
-            self.redGrow = True
-        if green >= 255:
-            self.greenGrow = False
-        if green <= 0:
-            self.greenGrow = True
-        if blue >= 255:
-            self.blueGrow = False
-        if blue <= 0:
-            self.blueGrow = True
-        if self.redGrow:
-            red = red + 1
-        else:
-            red = red - 1
-        if self.greenGrow:
-            green = green + 1
-        else:
-            green = green - 1
-        if self.blueGrow:
-            blue = blue + 1
-        else:
-            blue = blue - 1
-        self._color.r = red
-        self._color.g = green
-        self._color.b = blue
 
 class Color(object):
 
