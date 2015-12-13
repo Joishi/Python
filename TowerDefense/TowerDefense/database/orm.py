@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, String, PrimaryKeyConstraint, ForeignKey
+﻿from sqlalchemy import Table, Column, Integer, String, PrimaryKeyConstraint, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -20,14 +20,21 @@ class Point(SQLAlchemyBase):
 
     x = Column(Integer, nullable=False)
     y = Column(Integer, nullable=False)
+    z = Column(Integer, nullable=False)
+
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
 
     def __repr__(self):
-        return "<Point(point_id=%r, x=%r, y=%r)>" %(self.point_id, self.x, self.y)
+        return "<Point(point_id=%r, x=%r, y=%r, z=%r)>" %(self.point_id, self.x, self.y, self.z)
 
     def distance(self, point):
         dx = self.x - point.x
         dy = self.y - point.y
-        return hypot(dx, dy)
+        dz = self.z - point.z
+        return hypot(hypot(dx, dy), hypot(dy, dz))
 
 
 class Path(SQLAlchemyBase):

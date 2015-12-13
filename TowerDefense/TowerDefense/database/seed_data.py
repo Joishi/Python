@@ -1,10 +1,10 @@
-from database import orm
+﻿from database import orm
 
 class SeedData(object):
 
     def createSeedData(self, session):
-        point1 = orm.Point(x=0, y=0)
-        point2 = orm.Point(x=200,  y=200)
+        point1 = orm.Point(0, 0, 0)
+        point2 = orm.Point(200, 200, 200)
         path1 = orm.Path(name="Test Path")
         path1.points = [point1, point2]
 

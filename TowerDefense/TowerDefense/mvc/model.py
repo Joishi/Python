@@ -1,18 +1,41 @@
-class MainModel(object):
+﻿class ModelSubject(object):
+    
+    def __init__(self):
+        self._listeners = []
+
+    def addModelListener(self, modelListener):
+        if modelListener not in self._listeners:
+            self._listeners.append(modelListener)
+            modelListener.modelChanged(self)
+
+    def removeModelListener(self, modelListener):
+        if modelListener in self._listeners:
+            self._listeners.remove(modelListener)
+
+
+class MainModel(ModelSubject):
 
     def __init__(self):
-        self._gameStage = None
+        ModelSubject.__init__(self)
+        self._gameStages = None
+        self._activeGameStage = None
         self._towers = []
+    
+    def getGameStages(self):
+        return self._gameStages
 
-    def getGameStage(self):
-        return self._gameStage
+    def setGameStages(self, gameStages):
+        self._gameStages = gameStages
 
-    def setGameStage(self, gameStage):
-        self._gameStage = gameStage
+    def getActiveGameStage(self):
+        return self._activeGameStage
+
+    def setActiveGameStage(self, gameStage):
+        self._activeGameStage = gameStage
         self._towers.clear()
 
-    def delGameStage(self):
-        self._gameStage = None
+    def delActiveGameStage(self):
+        self._activeGameStage = None
         self._towers.clear()
 
     def getTowers(self):
@@ -21,6 +44,7 @@ class MainModel(object):
     def addTower(self, tower):
         self._towers.append(tower)
 
-    gameStage = property(getGameStage, setGameStage, delGameStage, "The Current Game Stage that is loaded and playable")
-    towers = property(getTowers)
+    gameStages = property(getGameStages, setGameStages, None, "A list of available game stages")
+    activeGameStage = property(getActiveGameStage, setActiveGameStage, delActiveGameStage, "The Current Game Stage that is loaded and playable")
+    towers = property(getTowers, None, None, "A list of active towers in the current active game stage")
 

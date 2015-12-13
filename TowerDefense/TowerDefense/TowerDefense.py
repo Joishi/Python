@@ -1,6 +1,5 @@
-from sqlalchemy import create_engine
+﻿from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-import tkinter
 from database import seed_data, orm
 from mvc import model, view
 
@@ -13,7 +12,10 @@ def main():
     seedData.createSeedData(session)
     gameStages = session.query(orm.GameStage).all()
     mainModel =  model.MainModel()
+    mainModel.gameStages = gameStages
     mainView = view.MainView()
+    mainView.model = mainModel
+    mainView.show()
     return
 
 

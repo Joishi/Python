@@ -4,13 +4,30 @@ import OpenGL.GL as gl
 import OpenGL.GLU as glu
 import OpenGL.GLUT as glut
 
-class MainView(object):
+class ModelListener(object):
+    '''To properly implement this class, you will need to add the following functions to your class:
+    gameStagesChanged(self, model)'''
+    def __init__(self):
+        None
+
+    def modelChanged(self, model):
+        self.gameStagesChanged(model)
+
+    def gameStagesChanged(self, model):
+        raise NotImplementedError("This method has not been implemented yet")
+
+
+class MainView(ModelListener):
 
     def __init__(self):
+        ModelListener.__init__(self)
+        self._model = None
+
         sphereCenter = Point3D(0, 0, 0)
         sphereColor = Color(255, 127, 0, 255)
         self.sphere = Sphere(sphereCenter, 2, sphereColor)
 
+    def show(self):
         # FROM http://code.activestate.com/recipes/325391-open-a-glut-window-and-draw-a-sphere-using-pythono/
         glut.glutInit(sys.argv)
         glut.glutInitDisplayMode(glut.GLUT_RGBA | glut.GLUT_DOUBLE | glut.GLUT_DEPTH)
@@ -41,6 +58,17 @@ class MainView(object):
         gl.glPushMatrix()
         glut.glutMainLoop()
 
+    def setModel(self, model):
+        if self._model is not None:
+            self._model.removeModelListener(self)
+        self._model = model
+        self._model.addModelListener(self)
+
+    model = property(None, setModel, None, "The model used for this view")
+
+    def gameStagesChanged(self, model):
+        self.updateGameStages(model.gameStages)
+
     def paint(self):
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT)
         gl.glPushMatrix()
@@ -58,6 +86,14 @@ class MainView(object):
 
     def repaint(self):
         glut.glutPostRedisplay()
+
+    def updateGameStages(self, gameStages):
+        # Do stuff here to populate some UI element with game stages...
+        for gameStage in gameStages:
+            print(gameStage)
+            print("  " + str(gameStage.path))
+            for point in gameStage.path.points:
+                print("    " + str(point))
 
 
 class Sphere(object):
