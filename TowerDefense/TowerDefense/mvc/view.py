@@ -6,7 +6,8 @@ from mvc.shapes import *
 
 class ModelListener(object):
     '''To properly implement this class, you will need to add the following functions to your class:
-    gameStagesChanged(self, model)'''
+    gameStagesChanged(self, model)
+    activeGameStageChanged(self, model)'''
     def __init__(self):
         return
 
@@ -14,6 +15,9 @@ class ModelListener(object):
         self.gameStagesChanged(model)
 
     def gameStagesChanged(self, model):
+        raise NotImplementedError("This method has not been implemented yet")
+
+    def activeGameStageChanged(self, model):
         raise NotImplementedError("This method has not been implemented yet")
 
 
@@ -72,7 +76,10 @@ class MainView(ModelListener):
 
     def setModel(self, model):
         if self._model is not None:
+            logging.info("%r Model Removed %r" %(self, self._model))
             self._model.removeModelListener(self)
+            self._model = None
+        logging.info("%r Model Set To %r" %(self, model))
         self._model = model
         self._model.addModelListener(self)
         return
@@ -80,9 +87,15 @@ class MainView(ModelListener):
     model = property(None, setModel, None, "The model used for this view")
 
     def gameStagesChanged(self, model):
-        self.updateGameStages(model.gameStages)
-        # this is only a temporary solution until UI element to select a game stage is done..
-        model.activeGameStage = model.gameStages[0]
+        # Do stuff here to populate some UI element with game stages...
+        if model.gameStages is not None:
+            for gameStage in model.gameStages:
+                logging.info("%r Game Stage Possibility %r" %(self, gameStage))
+        return
+
+    def activeGameStageChanged(self, model):
+        if model.activeGameStage is not None:
+            logging.info("%r Active Game Stage set to %r" %(self, model.activeGameStage))
         return
 
     def initOpenGLMatrix(self):
@@ -150,14 +163,5 @@ class MainView(ModelListener):
 
     def repaint(self):
         glut.glutPostRedisplay()
-        return
-
-    def updateGameStages(self, gameStages):
-        # Do stuff here to populate some UI element with game stages...
-        for gameStage in gameStages:
-            print(gameStage)
-            print("  " + str(gameStage.path))
-            for point in gameStage.path.points:
-                print("    " + str(point))
         return
 

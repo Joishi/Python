@@ -57,8 +57,8 @@ class Movable(object):
             if len(self._destinations) > 0:
                 self._currentDestination = self._destinations.popleft()
                 doneMoving = self.move(elapsedTime)
-        else:
-            logging.info("%r IS DONE MOVING" %(self))
+        if doneMoving:
+            logging.debug("%r IS DONE MOVING" %(self))
         return doneMoving
 
     def setStartingPoint(self, startingPoint):

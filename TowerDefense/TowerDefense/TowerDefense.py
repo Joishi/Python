@@ -17,8 +17,9 @@ def main():
     uiThread = threading.Thread(target=mainView.show)
     uiThread.start()
     mainModel =  model.MainModel("model for openGL view")
-    mainModel.gameStages = gameStages
     mainView.model = mainModel
+    mainModel.gameStages = gameStages
+    mainModel.activeGameStage = gameStages[0]
     return
 
 
