@@ -1,4 +1,4 @@
-﻿import time, sys
+﻿import logging, time, sys
 import OpenGL.GL as gl
 import OpenGL.GLU as glu
 import OpenGL.GLUT as glut
@@ -8,7 +8,9 @@ class ModelListener(object):
     '''To properly implement this class, you will need to add the following functions to your class:
     gameStagesChanged(self, model)'''
     def __init__(self):
-        None
+        logging.debug("Initializing ModelListener for " + str(self))
+        logging.debug("Done initializing ModelListener for " + str(self))
+        return
 
     def modelChanged(self, model):
         self.gameStagesChanged(model)
@@ -20,6 +22,7 @@ class ModelListener(object):
 class MainView(ModelListener):
 
     def __init__(self):
+        logging.debug("Initializing MainView for " + str(self))
         ModelListener.__init__(self)
         self._model = None
         self._eyePosition = None
@@ -29,32 +32,45 @@ class MainView(ModelListener):
 
         self._spheres = []
 
-        sphereCenter = Point3D(0, 0, 0)
+        sphereCenter = Point3D()
         sphereRadius = 20
         sphereColor = Color(255, 127, 0, 255)
-        sphere = Sphere(sphereCenter, sphereRadius, sphereColor)
-        sphere.addDestination(Point3D(50, 50, 50))
-        sphere.addDestination(Point3D(-50, -50, -50))
-        sphere.addDestination(Point3D(0, 0, 0))
+        sphere = Sphere()
+        sphere.center = sphereCenter
+        sphere.radius = sphereRadius
+        sphere.color = sphereColor
+        sphere.addDestination(Point3D().translate(50, 50, 50))
+        sphere.addDestination(Point3D().translate(-50, -50, -50))
+        sphere.addDestination(Point3D())
         self._spheres.append(sphere)
-        sphereCenter = Point3D(50, -20, -50)
+        sphereCenter = Point3D().translate(50, -20, -50)
         sphereRadius = 10
         sphereColor = Color(127, 0, 255, 255)
-        sphere = Sphere(sphereCenter, sphereRadius, sphereColor)
-        sphere.addDestination(Point3D(-50, 50, 50))
-        sphere.addDestination(Point3D(-50, 50, 50))
-        sphere.addDestination(Point3D(10, 10, 10))
+        sphere = Sphere()
+        sphere.center = sphereCenter
+        sphere.radius = sphereRadius
+        sphere.color = sphereColor
+        sphere.addDestination(Point3D().translate(-50, 50, 50))
+        sphere.addDestination(Point3D().translate(-50, 50, 50))
+        sphere.addDestination(Point3D().translate(10, 10, 10))
         self._spheres.append(sphere)
+        logging.debug("Done initializing MainView for " + str(self))
+        return
+
+    def __repr__(self):
+        return "<MainView openGL display>"
 
     def show(self):
         self.initOpenGLMatrix()
         glut.glutMainLoop()
+        return
 
     def setModel(self, model):
         if self._model is not None:
             self._model.removeModelListener(self)
         self._model = model
         self._model.addModelListener(self)
+        return
 
     model = property(None, setModel, None, "The model used for this view")
 
@@ -62,6 +78,7 @@ class MainView(ModelListener):
         self.updateGameStages(model.gameStages)
         # this is only a temporary solution until UI element to select a game stage is done..
         model.activeGameStage = model.gameStages[0]
+        return
 
     def initOpenGLMatrix(self):
         # FROM http://code.activestate.com/recipes/325391-open-a-glut-window-and-draw-a-sphere-using-pythono/
@@ -94,6 +111,7 @@ class MainView(ModelListener):
                       self._watchingPosition.x, self._watchingPosition.y, self._watchingPosition.z,
                       self._upVector.x, self._upVector.y, self._upVector.z)
         gl.glPushMatrix()
+        return
 
     def paint(self):
         elapsedTime = 0
@@ -127,6 +145,7 @@ class MainView(ModelListener):
 
     def repaint(self):
         glut.glutPostRedisplay()
+        return
 
     def updateGameStages(self, gameStages):
         # Do stuff here to populate some UI element with game stages...
@@ -135,4 +154,5 @@ class MainView(ModelListener):
             print("  " + str(gameStage.path))
             for point in gameStage.path.points:
                 print("    " + str(point))
+        return
 
