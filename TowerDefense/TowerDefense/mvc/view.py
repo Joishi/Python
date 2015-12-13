@@ -41,6 +41,8 @@ class MainView(ModelListener):
         sphere.addDestination(Point3D("Sphere 1 Destination 1").translate(50, 50, 50))
         sphere.addDestination(Point3D("Sphere 1 Destination 2").translate(-50, -50, -50))
         sphere.addDestination(Point3D("Sphere 1 Destination 3"))
+        sphere.maxVelocity = 50
+        sphere.acceleration = 1
         self._spheres.append(sphere)
         logging.debug("First Sphere added")
         sphereCenter = Point3D("Sphere 2 Center").translate(50, -20, -50)
@@ -50,6 +52,8 @@ class MainView(ModelListener):
         sphere.center = sphereCenter
         sphere.radius = sphereRadius
         sphere.color = sphereColor
+        sphere.maxVelocity = 20
+        sphere.acceleration = 1
         sphere.addDestination(Point3D("Sphere 2 Destination 1").translate(-50, 50, 50))
         sphere.addDestination(Point3D("Sphere 2 Destination 2").translate(50, 50, -50))
         sphere.addDestination(Point3D("Sphere 2 Destination 3").translate(10, 10, 10))

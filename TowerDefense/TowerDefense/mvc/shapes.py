@@ -53,10 +53,12 @@ class Movable(object):
                     bigDZ = self._currentDestination.z - self._currentLocation.z
                     self._currentLocation.translate(bigDX * ratio, bigDY * ratio, bigDZ * ratio)
                     doneMoving = False
-        else:
+        elif self._currentLocation is not None:
             if len(self._destinations) > 0:
                 self._currentDestination = self._destinations.popleft()
                 doneMoving = self.move(elapsedTime)
+        else:
+            logging.info("%r IS DONE MOVING" %(self))
         return doneMoving
 
     def setStartingPoint(self, startingPoint):
@@ -167,6 +169,7 @@ class Sphere(Movable):
 
     def setCenter(self, center):
         logging.debug("%r Setting Center %r" %(self, center))
+        Movable.startingPoint.fset(self, center)
         Movable.currentLocation.fset(self, center)
         return
 
